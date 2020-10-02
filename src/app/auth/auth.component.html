@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="authForm">         
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username">
+            <mat-error>Please enter your username</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <mat-error>Please enter your password</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </form>
+    <div class="button-container">
+        <div class="signup">
+            <p><small>Don't have an account? Sign up now</small></p>
+        </div>
+        <div class="button">
+            <button 
+            mat-flat-button 
+            color="primary" 
+            (click)="doSomething()" 
+            routerLink="/evaluation"
+            [disabled]="!authForm.valid">        
+              NEXT
+            </button>
+        </div>
+    </div>
+</div>

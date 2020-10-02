@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>
+    <mat-icon id="icon">person</mat-icon>
+    {{student.firstName | titlecase }} {{student.lastName | titlecase}} - {{task}}
+</h1>
+<div mat-dialog-content>
+     <form>
+        <mat-button-toggle-group name="evaluation" aria-label="evaluation">
+            <mat-button-toggle value="pass">Pass</mat-button-toggle>
+            <mat-button-toggle value="fail">Fail</mat-button-toggle>
+        </mat-button-toggle-group>
+        <br>
+        <mat-form-field appearance="outline" class="textsection">
+            <mat-label>Comment</mat-label>
+            <textarea matInput 
+            maxlength="200">
+            </textarea>
+            <mat-hint>(optional)</mat-hint>
+        </mat-form-field>
+     </form>
+</div>
+<div mat-dialog-actions>
+    <button 
+    mat-flat-button
+    color="primary" 
+    #btnFocus=matButton
+    (click)="submitEvaluation()">
+        Submit
+    </button>
+</div>
