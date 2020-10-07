@@ -15,7 +15,7 @@
     </mat-chip-list>
       <mat-form-field class="search">
         <mat-label>Search assessments</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="ID, competency, student name">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Student name, competency, date">
       </mat-form-field>
     
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
