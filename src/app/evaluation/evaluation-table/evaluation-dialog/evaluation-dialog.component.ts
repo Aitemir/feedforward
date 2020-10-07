@@ -3,6 +3,7 @@ import { EvaluationHttpService } from 'src/app/shared/evaluation-http.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {Student} from 'src/app/shared/student.model' 
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { timeoutWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-evaluation-dialog',
@@ -12,7 +13,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EvaluationDialogComponent implements OnInit {
 
   student: Student;
-  task: String;
+  competency: String;
+  DOC: String;
+  EPA: String;
 
   constructor(private _evaluationHttpService: EvaluationHttpService,
     public dialogRef: MatDialogRef<EvaluationDialogComponent>,
@@ -21,10 +24,12 @@ export class EvaluationDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.student = <Student>{};
-    this.task = <String>{};
+    this.competency = <String>{};
     this.student.studentId = this.data.studentId;
     this.student = this._evaluationHttpService.getStudent(this.student.studentId);
-    this.task = this.data.task;
+    this.competency = this.data.competency;
+    this.DOC = this.data.DOC;
+    this.EPA = this.data.EPA;
   }
 
   submitEvaluation() {

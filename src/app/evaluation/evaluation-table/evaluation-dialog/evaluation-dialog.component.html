@@ -1,12 +1,16 @@
 <h1 mat-dialog-title>
     <mat-icon id="icon">person</mat-icon>
-    {{student.firstName | titlecase }} {{student.lastName | titlecase}} - {{task}}
+    {{student.firstName | titlecase }} {{student.lastName | titlecase}}
 </h1>
 <div mat-dialog-content>
+    <p class="characteristics">DOC: <b>{{DOC}}</b></p>
+    <p class="characteristics">EPA: <b>{{EPA}}</b></p>
+    <p class="characteristics">Competency: <b>{{competency}}</b></p>
+    <br>
      <form>
         <mat-button-toggle-group name="evaluation" aria-label="evaluation">
-            <mat-button-toggle value="pass">Pass</mat-button-toggle>
-            <mat-button-toggle value="fail">Fail</mat-button-toggle>
+            <mat-button-toggle value="pass">Entrusable</mat-button-toggle>
+            <mat-button-toggle value="fail">Not entrustable</mat-button-toggle>
         </mat-button-toggle-group>
         <br>
         <mat-form-field appearance="outline" class="textsection">

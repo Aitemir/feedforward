@@ -21,24 +21,24 @@ export class EvaluationHttpService {
   private serviceUrl = 'someUrl';
 
   evaluations: Evaluation[] = [
-    {evaluationId: 1, task: 'Documentation', firstName: 'John', lastName: 'Smith', evaluated: 'N', studentId: 1},
-    {evaluationId: 2, task: 'Diagnostic', firstName: 'Alex', lastName: 'Brown', evaluated: 'N', studentId: 2},
-    {evaluationId: 3, task: 'Preventative screenings', firstName: 'Ann', lastName: 'Lee', evaluated: 'Y', studentId: 3},
-    {evaluationId: 4, task: 'History and Physical', firstName: 'Aitemir', lastName: 'Yeskenov', evaluated: 'Y', studentId: 4},
-    {evaluationId: 5, task: 'Diagnostic', firstName: 'Harvey', lastName: 'Hyman', evaluated: 'N', studentId: 5},
-    {evaluationId: 6, task: 'Treatment', firstName: 'Joseph', lastName: 'Goldman', evaluated: 'N', studentId: 6},
-    {evaluationId: 7, task: 'Preventative screenings', firstName: 'Martin', lastName: 'Wu', evaluated: 'Y', studentId: 7},
-    {evaluationId: 8, task: 'Womens Health', firstName: 'Jonathan', lastName: 'Chancey', evaluated: 'Y', studentId: 8},
-    {evaluationId: 9, task: 'Musculoskeletal', firstName: 'Sam', lastName: 'Bluemiller', evaluated: 'N', studentId: 9},
-    {evaluationId: 10, task: 'Treatment', firstName: 'Adam', lastName: 'Kim', evaluated: 'Y', studentId: 10},
-    {evaluationId: 11, task: 'Musculoskeletal', firstName: 'Alysson', lastName: 'Smith', evaluated: 'N', studentId: 11},
-    {evaluationId: 12, task: 'Treatment', firstName: 'Andrew', lastName: 'Gomez', evaluated: 'N', studentId: 12},
-    {evaluationId: 13, task: 'History and Physical', firstName: 'Emmanuel', lastName: 'Gonsalez', evaluated: 'N', studentId: 13},
-    {evaluationId: 14, task: 'Diagnostic', firstName: 'Artyom', lastName: 'Petrov', evaluated: 'N', studentId: 14},
-    {evaluationId: 15, task: 'Musculoskeletal', firstName: 'Nursultan', lastName: 'Nazarbayev', evaluated: 'N', studentId: 15},
-    {evaluationId: 16, task: 'LP Procedure', firstName: 'Harry', lastName: 'Potter', evaluated: 'N', studentId: 16},
-    {evaluationId: 17, task: 'Pre LP Data review', firstName: 'Peter', lastName: 'Parker', evaluated: 'N', studentId: 17},
-    {evaluationId: 18, task: 'Medical Interviewing Skills', firstName: 'Melania', lastName: 'Trump', evaluated: 'N', studentId: 18}
+    {evaluationId: 1, competency: 'Documentation', firstName: 'John', lastName: 'Smith', evaluated: 'N', studentId: 1, EPA: 'Procedure Prep', DOC: 'Diagnostic', date: '06-10-2020'},
+    {evaluationId: 2, competency: 'Diagnostic', firstName: 'Alex', lastName: 'Brown', evaluated: 'N', studentId: 2, EPA: 'Clinical Scenarios', DOC: 'Treatment', date: '06-15-2020'},
+    {evaluationId: 3, competency: 'Preventative screenings', firstName: 'Ann', lastName: 'Lee', evaluated: 'Y', studentId: 3, EPA: 'Procedures', DOC: 'Clinical Setting', date: '07-22-2020'},
+    {evaluationId: 4, competency: 'History and Physical', firstName: 'Aitemir', lastName: 'Yeskenov', evaluated: 'Y', studentId: 4, EPA: 'Procedure Prep', DOC: 'Treatment', date: '08-14-2020'},
+    {evaluationId: 5, competency: 'Diagnostic', firstName: 'Harvey', lastName: 'Hyman', evaluated: 'N', studentId: 5, EPA: 'Procedure Prep', DOC: 'Treatment', date: '06-16-2020'},
+    {evaluationId: 6, competency: 'Treatment', firstName: 'Joseph', lastName: 'Goldman', evaluated: 'N', studentId: 6, EPA: 'Clinical Scenarios', DOC: 'Clinical Setting', date: '06-18-2020'},
+    {evaluationId: 7, competency: 'Preventative screenings', firstName: 'Martin', lastName: 'Wu', evaluated: 'Y', studentId: 7, EPA: 'Clinical Scenarios', DOC: 'Diagnostic', date: '09-04-2020'},
+    {evaluationId: 8, competency: 'Womens Health', firstName: 'Jonathan', lastName: 'Chancey', evaluated: 'Y', studentId: 8, EPA: 'Clinical Scenarios', DOC: 'Treatment', date: '09-10-2020'},
+    {evaluationId: 9, competency: 'Musculoskeletal', firstName: 'Sam', lastName: 'Bluemiller', evaluated: 'N', studentId: 9, EPA: 'Procedure Prep', DOC: 'Clinical Setting', date: '09-10-2020'},
+    {evaluationId: 10, competency: 'Treatment', firstName: 'Adam', lastName: 'Kim', evaluated: 'Y', studentId: 10, EPA: 'Procedure Prep', DOC: 'Treatment', date: '09-01-2020'},
+    {evaluationId: 11, competency: 'Musculoskeletal', firstName: 'Alysson', lastName: 'Smith', evaluated: 'N', studentId: 11, EPA: 'Procedure Prep', DOC: 'Treatment', date: '08-26-2020'},
+    {evaluationId: 12, competency: 'Treatment', firstName: 'Andrew', lastName: 'Gomez', evaluated: 'N', studentId: 12, EPA: 'Documentation Proficiency', DOC: 'Clinical Setting', date: '08-26-2020'},
+    {evaluationId: 13, competency: 'History and Physical', firstName: 'Emmanuel', lastName: 'Gonsalez', evaluated: 'N', studentId: 13, EPA: 'Documentation Proficiency', DOC: 'Clinical Setting', date: '08-22-2020'},
+    {evaluationId: 14, competency: 'Diagnostic', firstName: 'Artyom', lastName: 'Petrov', evaluated: 'N', studentId: 14, EPA: 'Documentation Proficiency', DOC: 'Treatment', date: '09-11-2020'},
+    {evaluationId: 15, competency: 'Musculoskeletal', firstName: 'Nursultan', lastName: 'Nazarbayev', evaluated: 'N', studentId: 15, EPA: 'Clinical Scenarios', DOC: 'Treatment', date: '09-11-2020'},
+    {evaluationId: 16, competency: 'LP Procedure', firstName: 'Harry', lastName: 'Potter', evaluated: 'N', studentId: 16, EPA: 'Clinical Scenarios', DOC: 'History and Physical', date: '08-25-2020'},
+    {evaluationId: 17, competency: 'Pre LP Data review', firstName: 'Peter', lastName: 'Parker', evaluated: 'N', studentId: 17, EPA: 'Clinical Scenarios', DOC: 'History and Physical', date: '09-25-2020'},
+    {evaluationId: 18, competency: 'Medical Interviewing Skills', firstName: 'Melania', lastName: 'Trump', evaluated: 'N', studentId: 18, EPA: 'Clinical Scenarios', DOC: 'Treatment', date: '09-01-2020'}
   ];
 
   students: Student[] = [

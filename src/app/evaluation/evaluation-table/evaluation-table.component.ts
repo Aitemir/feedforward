@@ -18,8 +18,8 @@ export class EvaluationTableComponent implements OnInit {
   error: string;
   evaluations: Evaluation[] = [];
 
-  displayedColumns: string[] = ['evaluationId', 'task', 'firstName', 
-  'lastName', 'action'];
+  displayedColumns: string[] = ['firstName', 
+  'lastName', 'competency', 'date', 'action'];
   dataSource: MatTableDataSource<Evaluation>;
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
@@ -66,10 +66,10 @@ export class EvaluationTableComponent implements OnInit {
       });*/
     }
 
-    openActionDialog(studentId: string, task: string ){
+    openActionDialog(studentId: string, competency: string, DOC: string, EPA: string){
       const dialogRef = this.dialog.open(EvaluationDialogComponent, {
         width: '480px',
-        data: {studentId: studentId, task: task}
+        data: {studentId: studentId, competency: competency, DOC: DOC, EPA: EPA}
       });
       dialogRef.afterClosed().subscribe(result => {
         if (result == true) { 
