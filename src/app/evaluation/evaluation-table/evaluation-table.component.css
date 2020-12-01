@@ -50,7 +50,7 @@ th, td {
   background-color:#ebebeb;
 }
 
-@media screen  {
+@media screen and (max-width:600px)  {
   .mat-elevation-z8 {
     background: transparent;
     box-shadow: none;
